@@ -1,0 +1,33 @@
+@use '../variables.scss';
+
+.container-navbar{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  left: 225px;
+  gap: 22px;
+  a{
+    margin-top: 34px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #FFF;
+    font-family: variables.$placeholder-fontFamily;
+    outline: none;
+    &::after{
+      content: '';
+      background-color: variables.$principal-color1;
+      display: block;
+      width: 0;
+      height: 1px;
+      z-index: -1;
+      transition: width .2s ease;
+      margin-top: 5px;
+    }
+    &:hover{
+      &::after{
+        width: 100%;
+      }
+    }
+  }
+}
